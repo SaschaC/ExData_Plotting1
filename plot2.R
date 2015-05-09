@@ -14,7 +14,8 @@ d$timedate <- paste(d$Date, d$Time)
 d = transform(d, timedate = strptime(d$timedate, "%d/%m/%Y %H:%M:%S"))
 
 #plot
+png("plot2.png")
+
 with(d, plot(d$timedate,Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
 
-#save
-dev.copy(png, file = "plot2.png", w = 480, h = 480); dev.off()
+dev.off()

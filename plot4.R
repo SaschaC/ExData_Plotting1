@@ -29,6 +29,4 @@ legend("topright", col = c("black", "red", "blue"), lty = 1, bty = "n", legend =
 
 with(d, plot(d$timedate,Global_reactive_power, type = "l", xlab = "datetime"))
 
-#save
-#dev.copy(png, file = "plot4.png", w = 480, h = 480); 
 dev.off()

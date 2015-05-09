@@ -11,7 +11,9 @@ colnames(d) = c("Date","Time","Global_active_power","Global_reactive_power","Vol
 head(d)
 
 #plot
+
+png("plot1.png")
+
 with(d, hist(Global_active_power,xlab = "Global Active Power (kilowatts)", col="red", main = "Global Active Power"))
 
-#save
-dev.copy(png, file = "plot1.png", w = 480, h = 480); dev.off()
+dev.off()
