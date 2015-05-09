@@ -14,12 +14,13 @@ d$timedate <- paste(d$Date, d$Time)
 d = transform(d, timedate = strptime(d$timedate, "%d/%m/%Y %H:%M:%S"))
 
 #plot
+
+png("plot3.png")
 with(d, plot(timedate,Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab = ""))
 
 with(d, lines(timedate,Sub_metering_1))
 with(d, lines(timedate,Sub_metering_2, col = "red"))
 with(d, lines(timedate,Sub_metering_3, col = "blue"))
-legend("topright", col = c("black", "red", "blue"), lty = 1, y.intersp = 0.8, legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", col = c("black", "red", "blue"), lty = c(1,1), cex = 1, legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-#save
-dev.copy(png, file = "plot3.png", w = 480, h = 480); dev.off()
+dev.off()
